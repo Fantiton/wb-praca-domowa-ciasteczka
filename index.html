@@ -5,48 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="index.css" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body onmousedown="clicked()">
     <header class="header">
     
     </header>
     <div id="main">
         <div id="session">
-            <div id="visitsCounterDiv">
-                <h4>Liczba odwiedzin strony:</h4>
-                <h5>999</h5> 
+            <div id="top">
+                <div id="visitsCounterDiv">
+                    <h4>Liczba odwiedzin strony:</h4>
+                    <h5>1</h5> 
+                </div>
+                <div id="clicksCounterDiv">
+                    <h4>Liczba kliknięć w tej sesji:</h4>
+                    <h5>0</h5> 
+                </div>
             </div>
-            <div id="clicksCounterDiv">
-                <h4>Liczba kliknięć w tej sesji:</h4>
-                <h5>999</h5> 
-            </div>
-            <div id="resetAllDiv">
-                <button id="resetAllButton" class="resetButton" onclick="resetAll()">
-
-                </button>
-            </div>
-            <div id="resetVisitsDiv">
-                <button id="resetVisitsButton" class="resetButton" onclick="resetVisits()">
-
-                </button>
-            </div>
-            <div id="resetClicksDiv">
-                <button id="resetClicksButton" class="resetButton"  onclick="resetClicks()">
-
-                </button>
-            </div>
-            <div id="resetAllClicksDiv">
-                <button id="resetAllClicksButton" class="resetButton"  onclick="resetAllClicks()">
-
-                </button>
+            <div id="bottom">
+                <div id="resetAllDiv" class="resetDiv">
+                    <button id="resetAllButton" class="resetButton" onclick="resetAll()">
+                        Reset
+                    </button>
+                </div>
+                <div id="resetVisitsDiv" class="resetDiv">
+                    <button id="resetVisitsButton" class="resetButton" onclick="resetVisits()">
+                        Reset odwiedzin strony
+                    </button>
+                </div>
+                <div id="resetClicksDiv" class="resetDiv">
+                    <button id="resetClicksButton" class="resetButton"  onclick="resetClicks()">
+                        Reset kliknięć
+                    </button>
+                </div>
+                <div id="resetAllClicksDiv" class="resetDiv">
+                    <button id="resetAllClicksButton" class="resetButton"  onclick="resetAllClicks()">
+                        Reset wszystkich kliknięć
+                    </button>
+                </div>
             </div>
         </div>  
         <div id="history">
             <div id="historyListDiv">
-                skibidi 
-                skibidi
-                skibidi
+                <table>
+                    <tr>
+                        <th>
+                            Wizyta
+                        </th>
+                        <th>
+                            Data
+                        </th>
+                        <th>
+                            Kliknięcia
+                        </th>
+                    </tr>
+                </table>
             </div>
         </div> 
     </div>    
