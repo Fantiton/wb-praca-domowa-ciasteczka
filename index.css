@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2b96f3;
+}
+.header{
+    height: 10vh;
+    width: 100%;
+    background-color: #2b96f3;
+}
+#main{
+    height: 90vh;
+    width: 100%;
+    background-color: #eef6fd;
+    border-radius: 10vh 10vh 0 0;
+}
+#session{
+    width: 62%;
+    height: 100%;
+    border: 1px solid black;
+    float: left;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    padding: 5vh;
+}
+#visitsCounterDiv{
+    height: 20vh;
+    width: 20vw;
+    border: 5px solid #2b96f3;
+    background-color: #eef6fd;
+    text-align: center;
+    color: #1f85de;
+    font-size: 3.5vh;
+    line-height: 4vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    flex-direction: column;
+}
+h4{
+    font-size: 3vh;
+    color: black;
+    margin: auto;
+}
+h5{
+    font-size: 5vh;
+    margin: auto;
+}
+#clicksCounterDiv{
+    height: 20vh;
+    width: 20vw;
+    border: 5px solid #2b96f3;
+    background-color: #eef6fd;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 25px;
+    margin-left: 15vh;
+    color: #1f85de;
+    flex-direction: column;
+}
+#history{
+    width: 32%;
+    height: 100%;
+    border: 1px solid black;
+    float: right;
+}
