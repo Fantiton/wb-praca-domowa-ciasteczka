@@ -10,13 +10,16 @@ let history = []
 let dates = []
 
 window.onload = () => {
+    newVisit()
+}
+
+function newVisit(){
     history = JSON.parse(decodeURIComponent(getCookie("history") || "[]"))
     dates = JSON.parse(decodeURIComponent(getCookie("dates") || "[]"))
 
     visits = parseInt(getCookie("visits")) || 0
     visits++
 
-    // Dodajemy nową wizytę z 0 kliknięciami i aktualną datą
     history.push(0)
     dates.push(new Date().toLocaleString())
 
@@ -27,6 +30,10 @@ window.onload = () => {
 function clicked(){
     clicks++
     history[history.length - 1] = clicks
+
+    if(visits == 0){
+        newVisit()  
+    }
 
     setCookies()
     display()
@@ -46,6 +53,7 @@ function resetAll(){
 
 function resetVisits(){
     visits = 0
+
     setCookies()
     display()
 }
@@ -53,15 +61,16 @@ function resetVisits(){
 function resetClicks(){
     clicks = 0
     history[history.length - 1] = 0
+
     setCookies()
     display()
 }
 
-// Reset wszystkich kliknięć w historii (czyli czyścimy tablicę kliknięć i dat)
 function resetAllClicks(){
     clicks = 0
     history = []
     dates = []
+
     setCookies()
     display()
 }
@@ -75,14 +84,12 @@ function display(){
     `<h4> Liczba kliknięć w tej sesji:</h4>
     <h5> ${clicks} </h5>`
 
-    // Czyścimy stare wiersze w tabeli (poza nagłówkiem)
     while(historyTable.rows.length > 1){
         historyTable.deleteRow(1)
     }
 
-    // Dodajemy wiersze do tabeli
     for(let i=0; i < history.length; i++){
-        let row = historyTable.insertRow(-1) // wstawiamy na koniec
+        let row = historyTable.insertRow(-1)
         let cellVisit = row.insertCell(0)
         let cellDate = row.insertCell(1)
         let cellClicks = row.insertCell(2)
@@ -97,7 +104,7 @@ function display(){
 
 function setCookies() {
     const d = new Date();
-    d.setTime(d.getTime() + (36000*24*60*60*1000)); // 36000 dni
+    d.setTime(d.getTime() + (36000*24*60*60*1000)); 
     let expires = "expires="+ d.toUTCString();
 
     document.cookie = "visits=" + visits + ";" + expires + ";path=/";
